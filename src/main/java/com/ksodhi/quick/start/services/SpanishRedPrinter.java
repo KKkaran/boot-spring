@@ -3,9 +3,9 @@ package com.ksodhi.quick.start.services;
 import org.springframework.stereotype.Component;
 
 @Component
-public class EnglishGreenPrinter implements GreenPrinter{
+public class SpanishRedPrinter implements RedPrinter{
     @Override
     public String print() {
-        return "green";
+        return "spanishRed";
     }
 }

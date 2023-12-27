@@ -1,15 +1,18 @@
 package com.ksodhi.quick.start.services;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class ColourPrinterImpl implements ColourPrinter{
 
     private RedPrinter redPrinter;
     private BluePrinter bluePrinter;
     private GreenPrinter greenPrinter;
 
-    public ColourPrinterImpl(){
-        this.redPrinter = new EnglishRedPrinter();
-        this.bluePrinter = new EnglishBluePrinter();
-        this.greenPrinter = new EnglishGreenPrinter();
+    public ColourPrinterImpl(RedPrinter redPrinter, BluePrinter bluePrinter, GreenPrinter greenPrinter){
+        this.redPrinter = redPrinter;
+        this.bluePrinter = bluePrinter;
+        this.greenPrinter = greenPrinter;
     }
     @Override
     public String print() {

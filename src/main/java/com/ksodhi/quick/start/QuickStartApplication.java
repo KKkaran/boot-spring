@@ -11,13 +11,17 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @Log
 public class QuickStartApplication implements CommandLineRunner {
 
+	private ColourPrinter colourPrinter;
+	public QuickStartApplication(ColourPrinter colourPrinter){
+		this.colourPrinter = colourPrinter;
+	}
 	public static void main(String[] args) {
 		SpringApplication.run(QuickStartApplication.class, args);
 	}
 
 	@Override
 	public void run(final String... args){
-		final ColourPrinter colourPrinter = new ColourPrinterImpl();
+//		final ColourPrinter colourPrinter = new ColourPrinterImpl();
 		log.info(colourPrinter.print());
 	}
 
